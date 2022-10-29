@@ -174,6 +174,10 @@ def main():
                         type=str,
                         help="input file name",
                         required=True)
+    parser.add_argument("-c", "--calendar",
+                        type=str,
+                        help="what google calendar to write to",
+                        required=True)
 
     args = parser.parse_args() 
 
@@ -190,7 +194,7 @@ def main():
             timetree_event_dict["recurrence"] = event["recurrences"]
             timetree_event_dict["timezone"] = event["start_timezone"]
             timetree_event_dict["location"] = event["location"]
-            google_event_handler(timetree_event_dict, get_google_calendarid("Personal"))
+            google_event_handler(timetree_event_dict, get_google_calendarid(args.calendar))
 
 
 if __name__ == "__main__":
