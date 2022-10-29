@@ -22,7 +22,7 @@ Make sure to have the TimeTree sync JSON calendar data in the [data/](data/) dir
 
 You need to specify which file to ingest using the argument parser. Example:
 ```
-python3 timetree_to_google_calendar.py --input <FILENAME>
+python3 timetree_to_google_calendar.py --input <FILENAME> -c <CALENDAR_NAME>
 ```
 
 For help use:
