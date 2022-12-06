@@ -18,6 +18,7 @@ def get_google_calendarid(calendar_title: str):
     This is a way to get your Google calendar id from a calendar title (summary).
 
     :param calendar_title: the calendar title/summary name
+    :return: the found calendar id
     """
     # Scopes for read/write access to calendars
     SCOPES = ["https://www.googleapis.com/auth/calendar", 
@@ -108,6 +109,7 @@ def google_event_handler(timetree_data: dict, calendarid: str):
 
     :param timetree_data: dict of the parsed timetree data
     :param calendarid: google calendar id
+    :return: output that the event has been created or not
     """
     timezone = 'Europe/London'
     event = {
@@ -162,6 +164,7 @@ def time_conversion(unix_epoch: int):
     Simple function to convert unix epoch milliseconds into date and timestamps.
 
     :param unix_epoch: int of unix epoch milliseconds
+    :return: converted datetime string
     """
     converted = time.strftime("%Y-%m-%dT%H:%M:%S-00:00", 
                               time.localtime(unix_epoch / 1000))
